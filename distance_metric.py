@@ -1,4 +1,5 @@
-import numpy
+import numpy as np
+import pandas as pd
 from scipy.fftpack import fft,fft2, fftshift
 from scipy import spatial
 import matplotlib.pyplot as plt
@@ -15,8 +16,4 @@ def DCDistance(s1,s2):
     s = spatial.distance.correlation(s1,s2)
     return s
 
-import numpy as np
-
-
-
-## And much more!
+####
