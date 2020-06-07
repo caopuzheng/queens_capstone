@@ -1,3 +1,4 @@
+## Using Hierarchical method to cluster the data
 import pandas as pd
 from Preprocess import *
 from utilitie import *

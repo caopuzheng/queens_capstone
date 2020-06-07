@@ -29,17 +29,18 @@ rating_data = process_rating_data(pd.read_csv("C:/Users/y437l/OneDrive/MMAI/Caps
 from pyclustering.cluster.dbscan import dbscan
 from pyclustering.utils.metric import type_metric, distance_metric
 # Load list of points for cluster analysis.
-sample = test_cluster_1_with_spread_change
+market_data = test_cluster_1_with_spread_change
 ####DTW
 user_function = lambda series1, series2: DTWDistance(series1, series2)
 #####Distance correlation
-###user_function = lambda series1, series2: DCDistance(series1, series2)
+#user_function = lambda series1, series2: DCDistance(series1, series2)
 metric = distance_metric(type_metric.USER_DEFINED, func =user_function)
+#metric = distance_metric(type_metric.EUCLIDEAN)
 # Create DBSCAN algorithm.
-dbscan_instance = dbscan(sample,0.3, 1,metric=metric)
+dbscan_instance = dbscan(market_data,0.5, 3,metric=metric)
 # Start processing by DBSCAN.
 dbscan_instance.process()
-# Obtain results of clustering.
+## Obtain results of clustering.
 clusters = dbscan_instance.get_clusters()
 print(len(clusters))
 noise = dbscan_instance.get_noise()
@@ -47,3 +48,6 @@ print(len(noise))
 
 clusters_list = grab_clusters(clusters,bond_spread_list,security_data,rating_data)
 clusters_data_list = transfer_to_list_of_pd(clusters_list)
+
+from sklearn.cluster import DBSCAN
+clustering = DBSCAN(eps=0.5, min_samples=2, metric=DTW).fit(market_data)

@@ -32,7 +32,7 @@ def spread_slope(data,input):
         star_point = data.Spread_G_Z.iloc[star]
         end_point = data.Spread_G_Z.iloc[end]
         gap = (end-star)
-        slope = (star_point - end_point) / gap
+        slope = (end_point - star_point) / gap
     return (star, end, gap,slope)
 
 def fill_the_GSpeard(data):
@@ -79,11 +79,15 @@ def sliding_windows(data,period_of_time,start_date):
     date = int(time_list[2])
     start_datetime = datetime.datetime(year, month, date)
     data['KeyDate'] = pd.to_datetime(data['KeyDate'])
+    data['MaturityDate'] = pd.to_datetime(data['MaturityDate'])
+    data['IssueDate'] = pd.to_datetime(data['IssueDate'])
     ###find the end date:
     end_datetime = start_datetime + datetime.timedelta(days=period_of_time)
     end_date = str(end_datetime.date())
     #####select data before the end_date
-    data = data[data['KeyDate']<=end_date]
+    data = data[data['KeyDate'] <= end_date]
+    data = data[data['IssueDate'] <= start_datetime]
+    data = data[data['MaturityDate'] >= end_date]
     return data
 
 
