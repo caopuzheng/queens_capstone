@@ -26,7 +26,7 @@ security_data = pd.read_csv("C:/Users/y437l/OneDrive/MMAI/Capstone/Data/Security
 ###################
 ### Rating Data####
 ###################
-rating_data = process_rating_data(pd.read_csv("C:/Users/y437l/OneDrive/MMAI/Capstone/Data/Rating.csv"))
+rating_data = process_rating_data(pd.read_csv("C:/Users/y4 37l/OneDrive/MMAI/Capstone/Data/Rating.csv"))
 
 ##########################
 ### K Mean APPROACH ######
@@ -38,10 +38,10 @@ from pyclustering.utils.metric import type_metric, distance_metric
 # read sample 'Simple3' from file (sample contains four clusters)
 market_data = test_cluster_1_with_spread_change
 user_function = lambda series1, series2: DTWDistance(series1, series2)
-#metric = distance_metric(type_metric.USER_DEFINED, func =user_function)
-metric = distance_metric(type_metric.EUCLIDEAN)
+metric = distance_metric(type_metric.USER_DEFINED, func =user_function)
+#metric = distance_metric(type_metric.EUCLIDEAN)
 # create instance of Elbow method using K value from 1 to 10.
-kmin, kmax = 1, 5
+kmin, kmax = 1, 100
 elbow_instance = elbow(market_data, kmin, kmax,metric=metric)
 # process input data and obtain results of analysis
 elbow_instance.process()

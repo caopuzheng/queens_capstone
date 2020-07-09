@@ -37,7 +37,7 @@ user_function = lambda series1, series2: DTWDistance(series1, series2)
 metric = distance_metric(type_metric.USER_DEFINED, func =user_function)
 #metric = distance_metric(type_metric.EUCLIDEAN)
 # Create DBSCAN algorithm.
-dbscan_instance = dbscan(market_data,0.5, 3,metric=metric)
+dbscan_instance = dbscan(market_data, 0.02, 3, metric=metric)
 # Start processing by DBSCAN.
 dbscan_instance.process()
 ## Obtain results of clustering.
@@ -48,6 +48,3 @@ print(len(noise))
 
 clusters_list = grab_clusters(clusters,bond_spread_list,security_data,rating_data)
 clusters_data_list = transfer_to_list_of_pd(clusters_list)
-
-from sklearn.cluster import DBSCAN
-clustering = DBSCAN(eps=0.5, min_samples=2, metric=DTW).fit(market_data)

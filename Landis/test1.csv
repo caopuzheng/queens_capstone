@@ -1,0 +1,325 @@
+,SecurityID,Sector,Industry,Sub_Industry,Seniority,Issuedby,Country,Rating
+0,369,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,SUNCOR ENERGY VENTURES CORP,CA,A-
+1,1868,Financials,Financial Services,Finance-Invest Bnkr/Brkr,Jr Subordinated Unsecured,E*TRADE FINANCIAL CORP,US,BB
+2,2059,Consumers,Supermarkets & Pharmacies,Retail-Drug Store,Sr Unsecured,WALGREENS BOOTS ALLIANCE INC,US,BBB
+3,2522,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,GENERAL MOTORS FINANCIAL CO INC,US,BBB
+4,2568,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,JPMORGAN CHASE & CO,US,A-
+5,2824,Consumers,Food & Beverage,Food-Misc/Diversified,Sr Unsecured,MCCORMICK & CO INC/MD,US,BBB
+6,2909,Communications,Entertainment Content,Television,Sr Unsecured,CBS CORP,US,BBB
+7,3042,Financials,Banks,Money Center Banks,Subordinated Unsecured,BBVA GLOBAL FINANCE LTD,ES,BBB
+8,3067,Technology,Software & Services,Computer Services,Sr Unsecured,INTERNATIONAL BUSINESS MACHINES CORP,US,A
+9,3094,Industrials,Transportation & Logistics,Transport-Services,Sr Unsecured,UNITED PARCEL SERVICE INC,US,A
+10,3281,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,FORD MOTOR CO,US,BBB-
+11,3301,Communications,Wireless Telecommunications Services,Telephone-Integrated,Sr Unsecured,SPRINT CAPITAL CORP,US,B
+12,3311,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,FORD HOLDINGS LLC,US,BBB
+13,3750,Consumers,Food & Beverage,Brewery,Sr Unsecured,ANHEUSER-BUSCH COS LLC,BE,A-
+14,4090,Financials,Banks,Commer Banks Non-US,Jr Subordinated Unsecured,BANCO CONTINENTAL SA VIA CONTINENTAL TRUSTEES CAYMAN LTD,PE,BB+
+15,4096,Communications,Entertainment Content,Television,Sr Unsecured,CBS CORP,US,BBB
+16,4252,Financials,Banks,Super-Regional Banks-US,Sr Unsecured,WELLS FARGO & CO,US,A-
+17,4287,Communications,Wireless Telecommunications Services,Telephone-Integrated,Sr Unsecured,AT&T INC,US,BBB
+18,4378,Consumers,Homebuilders,Bldg-Residential/Commer,1st Lien Secured,K HOVNANIAN ENTERPRISES INC,US,CCC
+19,4410,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,JPMORGAN CHASE & CO,US,A-
+20,4448,Energy,Pipeline,Pipelines,Sr Unsecured,ONEOK INC,US,BBB
+21,5314,Financials,Life Insurance,Life/Health Insurance,Sr Unsecured,SAMMONS FINANCIAL GROUP INC,US,BBB+
+22,5929,Financials,Banks,Commer Banks Non-US,Subordinated Unsecured,BPCE SA,FR,BBB+
+23,6922,Financials,Banks,Building Societies,Sr Unsecured,NATIONWIDE BUILDING SOCIETY,GB,A
+24,7235,Financials,Life Insurance,Multi-line Insurance,Sr Unsecured,METLIFE INC,US,A-
+25,7547,Financials,Banks,Commer Banks Non-US,Sr Unsecured,BNZ INTERNATIONAL FUNDING LTD/LONDON,NZ,AA-
+26,7584,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,SUMITOMO MITSUI FINANCIAL GROUP INC,JP,A-
+27,7588,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,HSBC HOLDINGS PLC,GB,A
+28,7847,Financials,Banks,Commer Banks-Central US,Subordinated Unsecured,SUNTRUST BANK/ATLANTA GA,US,BBB+
+29,8102,Health Care,Biotechnology,Medical-Biomedical/Gene,Sr Unsecured,AMGEN INC,US,A
+30,8248,Health Care,Biotechnology,Medical-Biomedical/Gene,Sr Unsecured,GILEAD SCIENCES INC,US,A
+31,8288,Consumers,Supermarkets & Pharmacies,Food-Retail,Sr Unsecured,KROGER CO/THE,US,BBB
+32,8629,Health Care,Pharmaceuticals,Medical-Generic Drugs,Sr Unsecured,MYLAN NV,US,BBB-
+33,9137,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,FORD MOTOR CREDIT CO LLC,US,BBB-
+34,9142,Financials,Banks,Commer Banks Non-US,Subordinated Unsecured,COOPERATIEVE RABOBANK UA,NL,BBB+
+35,9167,Basic Materials,Metals & Mining,Mining Services,Secured,BARMINCO FINANCE PTY LTD,AU,BB
+36,9192,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,GENERAL MOTORS FINANCIAL CO INC,US,BBB
+37,9202,Energy,Pipeline,Pipelines,1st Lien Secured,CHENIERE CORPUS CHRISTI HOLDINGS LLC,US,BB+
+38,9251,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,DEUTSCHE BANK AG,DE,BBB-
+39,9284,Health Care,Managed Care,Medical-HMO,Sr Unsecured,KAISER FOUNDATION HOSPITALS,US,Not Founded
+40,9298,Consumers,Food & Beverage,Beverages-Non-alcoholic,Sr Unsecured,PEPSICO INC,US,A+
+41,9314,Technology,Software & Services,Entertainment Software,Sr Unsecured,ACTIVISION BLIZZARD INC,US,BBB+
+42,9318,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,DAIMLER FINANCE NORTH AMERICA LLC,DE,A-
+43,9323,Consumers,Consumer Products,Cosmetics&Toiletries,Sr Unsecured,UNILEVER CAPITAL CORP,GB,A+
+44,9379,Technology,Semiconductors,Electronic Compo-Semicon,Sr Unsecured,INTEL CORP,US,A+
+45,9380,Technology,Semiconductors,Electronic Compo-Semicon,Sr Unsecured,INTEL CORP,US,A+
+46,9526,Technology,Software & Services,Entertainment Software,Sr Unsecured,ACTIVISION BLIZZARD INC,US,BBB+
+47,9683,Technology,Semiconductors,Electronic Compo-Semicon,Sr Unsecured,INTEL CORP,US,A+
+48,9759,Financials,Banks,Commer Banks-Southern US,Sr Unsecured,BBVA USA,US,BBB+
+49,10146,Energy,Pipeline,Pipelines,Sr Unsecured,ENTERPRISE PRODUCTS OPERATING LLC,US,BBB+
+50,10569,Financials,Banks,Super-Regional Banks-US,Jr Subordinated Unsecured,WACHOVIA CAPITAL TRUST III,US,BBB-
+51,10642,Financials,Banks,Diversified Banking Inst,Jr Subordinated Unsecured,BAC CAPITAL TRUST XIII,US,BBB-
+52,10871,Financials,Diversified Banks,Diversified Banking Inst,Jr Subordinated Unsecured,CITIGROUP INC,US,BB+
+53,10873,Financials,Financial Services,Finance-Other Services,Secured,EXCALIBUR ONE 77B LLC,US,Not Founded
+54,11305,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,AMERICAN HONDA FINANCE CORP,US,A
+55,11346,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,AMERICAN HONDA FINANCE CORP,US,A
+56,11678,Communications,Cable & Satellite,Cable/Satellite TV,Sr Unsecured,CCO HOLDINGS LLC / CCO HOLDINGS CAPITAL CORP,US,BB
+57,11698,Communications,Publishing & Broadcasting,Broadcast Serv/Program,Sr Unsecured,DISCOVERY COMMUNICATIONS LLC,US,BBB-
+58,11842,Financials,Life Insurance,Life/Health Insurance,Sr Unsecured,GREAT-WEST LIFECO FINANCE DELAWARE LP,CA,A+
+59,11998,Technology,Hardware,Computers,Sr Unsecured,HEWLETT PACKARD ENTERPRISE CO,US,BBB
+60,12157,Communications,Cable & Satellite,Cable/Satellite TV,Sr Unsecured,COX COMMUNICATIONS INC,US,BBB
+61,12288,Basic Materials,Metals & Mining,Metal-Copper,Sr Unsecured,FIRST QUANTUM MINERALS LTD,ZM,B-
+62,12348,Consumers,Food & Beverage,Food-Misc/Diversified,2nd Lien Secured,KRAFT HEINZ FOODS CO,US,BBB-
+63,12353,Communications,Cable & Satellite,Cable/Satellite TV,Sr Unsecured,ALTICE LUXEMBOURG SA,LU,B-
+64,12443,Financials,Financial Services,Diversified Banking Inst,Sr Unsecured,UBS GROUP FUNDING SWITZERLAND AG,CH,A-
+65,12471,Financials,Banks,Commer Banks Non-US,Sr Unsecured,COMMONWEALTH BANK OF AUSTRALIA,AU,AA-
+66,12485,Financials,Commercial Finance,Transport-Equip&Leasng,Sr Unsecured,SMBC AVIATION CAPITAL FINANCE DAC,IE,A-
+67,12862,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,BANK OF AMERICA CORP,US,A-
+68,13248,Technology,Software & Services,Applications Software,Sr Unsecured,MICROSOFT CORP,US,AAA
+69,13346,Financials,Property & Casualty Insurance,Insurance Brokers,Sr Unsecured,USI INC/NY,US,Not Founded
+70,13348,Financials,Banks,Diversified Banking Inst,Sr Unsecured,UNICREDIT SPA,IT,BBB
+71,13421,Energy,Utilities,Electric-Integrated,Sr Unsecured,FIRSTENERGY CORP,US,BBB-
+72,13456,Technology,Hardware,Office Automation&Equip,Sr Unsecured,PITNEY BOWES INC,US,BB
+73,13457,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,CONCHO RESOURCES INC,US,BBB-
+74,13460,Energy,Pipeline,Pipelines,Jr Subordinated Unsecured,ENLINK MIDSTREAM PARTNERS LP,US,B+
+75,13551,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Jr Subordinated Unsecured,GENERAL MOTORS FINANCIAL CO INC,US,BB+
+76,14553,Financials,Commercial Finance,Transport-Equip&Leasng,Sr Unsecured,FLY LEASING LTD,IE,BB
+77,14743,Financials,Banks,Commer Banks Non-US,Sr Unsecured,MIZUHO BANK LTD,JP,A
+78,15083,Consumers,Food & Beverage,Brewery,Sr Unsecured,HEINEKEN NV,NL,BBB+
+79,15234,Financials,Financial Services,Private Equity,Sr Unsecured,APOLLO MANAGEMENT HOLDINGS LP,US,A
+80,15329,Health Care,Pharmaceuticals,Medical-Drugs,Sr Unsecured,JOHNSON & JOHNSON,US,AAA
+81,15573,Industrials,Aerospace & Defense,Aerospace/Defense-Equip,Sr Unsecured,UNITED TECHNOLOGIES CORP,US,BBB+
+82,15606,Consumers,Food & Beverage,Food-Confectionery,Sr Unsecured,HERSHEY CO/THE,US,A
+83,15869,Energy,Pipeline,Pipelines,Sr Unsecured,MAGELLAN MIDSTREAM PARTNERS LP,US,BBB+
+84,15986,Financials,Banks,Commer Banks Non-US,Jr Subordinated Unsecured,NORDEA BANK ABP,FI,BBB
+85,16037,Financials,Banks,Commer Banks Non-US,Sr Unsecured,SANTANDER UK GROUP HOLDINGS PLC,GB,BBB
+86,16048,Financials,Banks,Commer Banks Non-US,Sr Unsecured,SVENSKA HANDELSBANKEN AB,SE,AA-
+87,16069,Financials,Banks,Commer Banks Non-US,Sr Unsecured,SVENSKA HANDELSBANKEN AB,SE,AA-
+88,16124,Industrials,Transportation & Logistics,Transport-Services,Sr Unsecured,UNITED PARCEL SERVICE INC,US,A
+89,16176,Energy,Utilities,Electric-Integrated,Secured,NORTHERN STATES POWER CO/MN,US,A
+90,16531,Energy,Integrated Oils,Oil Comp-Integrated,Sr Unsecured,BP CAPITAL MARKETS AMERICA INC,US,A-
+91,16546,Energy,Integrated Oils,Oil Comp-Integrated,Sr Unsecured,BP CAPITAL MARKETS PLC,GB,A-
+92,17186,Real Estate,Real Estate,REITS-Regional Malls,Sr Unsecured,SIMON PROPERTY GROUP LP,US,A
+93,17204,Real Estate,Real Estate,REITS-Single Tenant,Sr Unsecured,VEREIT OPERATING PARTNERSHIP LP,US,BBB-
+94,17463,Basic Materials,Containers & Packaging,Containers-Paper/Plastic,1st Lien Secured,REYNOLDS GROUP ISSUER INC / REYNOLDS GROUP ISSUER LLC / REYNOLDS GROUP ISSUER LU,US,B+
+95,17625,Communications,Entertainment Content,Multimedia,Sr Unsecured,TWDC ENTERPRISES 18 CORP,US,A
+96,18056,Industrials,Machinery Manufacturing,Machinery-Farm,Sr Unsecured,JOHN DEERE CAPITAL CORP,US,A
+97,18245,Basic Materials,Forest & Paper Products Manufacturing,Paper&Related Products,Sr Unsecured,DOMTAR CORP,US,BBB-
+98,18473,Energy,Utilities,Electric-Integrated,Secured,SAN DIEGO GAS & ELECTRIC CO,US,A
+99,18751,Financials,Banks,Commer Banks-Central US,Sr Unsecured,FIFTH THIRD BANK/CINCINNATI OH,US,A-
+100,18984,Financials,Diversified Banks,Diversified Banking Inst,Sr Unsecured,CITIGROUP INC,US,BBB+
+101,19069,Financials,Life Insurance,Mutual Insurance,Secured,NEW YORK LIFE GLOBAL FUNDING,US,AA+
+102,19070,Financials,Life Insurance,Mutual Insurance,Secured,NEW YORK LIFE GLOBAL FUNDING,US,AA+
+103,19071,Financials,Life Insurance,Mutual Insurance,Secured,NEW YORK LIFE GLOBAL FUNDING,US,AA+
+104,19711,Consumers,Food & Beverage,Poultry,Sr Unsecured,PILGRIM'S PRIDE CORP,US,BB
+105,19827,Health Care,Health Care Facilities & Services,Pharmacy Services,Sr Unsecured,CVS HEALTH CORP,US,BBB
+106,19834,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,HYUNDAI CAPITAL SERVICES INC,KR,BBB+
+107,19838,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,HYUNDAI CAPITAL SERVICES INC,KR,BBB+
+108,19887,Health Care,Health Care Facilities & Services,Pharmacy Services,Sr Unsecured,CVS HEALTH CORP,US,BBB
+109,19951,Basic Materials,Metals & Mining,Diversified Minerals,Sr Unsecured,ANGLO AMERICAN CAPITAL PLC,GB,BBB
+110,20045,Consumers,Leisure Products Manufacturing,Toys,Sr Unsecured,HASBRO INC,US,BBB-
+111,20224,Energy,Utilities,Electric-Integrated,Sr Unsecured,BERKSHIRE HATHAWAY ENERGY CO,US,A-
+112,20227,Financials,Property & Casualty Insurance,Reinsurance,Sr Unsecured,BERKSHIRE HATHAWAY FINANCE CORP,US,AA
+113,20228,Industrials,Railroad,Transport-Rail,Sr Unsecured,BURLINGTON NORTHERN SANTA FE LLC,US,A+
+114,20295,Financials,Property & Casualty Insurance,Mutual Insurance,Jr Subordinated Unsecured,LIBERTY MUTUAL GROUP INC,US,BB+
+115,20326,Financials,Property & Casualty Insurance,Property/Casualty Ins,Sr Unsecured,TRAVELERS COS INC/THE,US,A
+116,20454,Financials,Life Insurance,Life/Health Insurance,Secured,PRINCIPAL LIFE GLOBAL FUNDING II,US,A+
+117,20465,Financials,Life Insurance,Life/Health Insurance,Jr Subordinated Unsecured,PRUDENTIAL FINANCIAL INC,US,BBB+
+118,20477,Financials,Life Insurance,Life/Health Insurance,Sr Unsecured,PRUDENTIAL FINANCIAL INC,US,A
+119,20630,Real Estate,Real Estate,REITS-Shopping Centers,Sr Unsecured,REGENCY CENTERS LP,US,BBB+
+120,20637,Real Estate,Real Estate,REITS-Apartments,Sr Unsecured,UDR INC,US,BBB+
+121,20638,Real Estate,Real Estate,REITS-Apartments,Sr Unsecured,UDR INC,US,BBB+
+122,20955,Consumers,Travel & Lodging,Hotels&Motels,Sr Unsecured,MARRIOTT INTERNATIONAL INC/MD,US,BBB
+123,20957,Consumers,Travel & Lodging,Hotels&Motels,Sr Unsecured,MARRIOTT INTERNATIONAL INC/MD,US,BBB
+124,20991,Communications,Cable & Satellite,Cable/Satellite TV,1st Lien Secured,CHARTER COMMUNICATIONS OPERATING LLC / CHARTER COMMUNICATIONS OPERATING CAPITAL,US,BBB-
+125,21056,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,GENERAL MOTORS FINANCIAL CO INC,US,BBB
+126,21057,Consumers,Mass Merchants,Retail-Discount,Sr Unsecured,DOLLAR TREE INC,US,BBB-
+127,21083,Energy,Pipeline,Pipelines,Sr Unsecured,TARGA RESOURCES PARTNERS LP / TARGA RESOURCES PARTNERS FINANCE CORP,US,BB
+128,21461,Consumers,Mass Merchants,Retail-Discount,Sr Unsecured,WALMART INC,US,AA
+129,21616,Financials,Banks,Super-Regional Banks-US,Subordinated Unsecured,HUNTINGTON BANCSHARES INC/OH,US,BBB
+130,21658,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,GENERAL DYNAMICS CORP,US,A+
+131,21727,Financials,Property & Casualty Insurance,Multi-line Insurance,Sr Unsecured,AMERICAN INTERNATIONAL GROUP INC,US,BBB+
+132,21926,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,HARLEY-DAVIDSON FINANCIAL SERVICES INC,US,BBB+
+133,21937,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,HARLEY-DAVIDSON FINANCIAL SERVICES INC,US,BBB+
+134,22162,Industrials,Electrical Equipment Manufacturing,Diversified Manufact Op,Sr Unsecured,SIEMENS FINANCIERINGSMAATSCHAPPIJ NV,DE,A+
+135,22185,Energy,Pipeline,Pipelines,Sr Unsecured,TARGA RESOURCES PARTNERS LP / TARGA RESOURCES PARTNERS FINANCE CORP,US,BB
+136,22203,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,BAE SYSTEMS PLC,GB,BBB
+137,22205,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,BAE SYSTEMS HOLDINGS INC,GB,BBB
+138,22206,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,BAE SYSTEMS HOLDINGS INC,GB,BBB
+139,22215,Energy,Utilities,Electric-Integrated,Sr Unsecured,WEC ENERGY GROUP INC,US,BBB+
+140,22217,Energy,Utilities,Electric-Integrated,Sr Unsecured,WISCONSIN ELECTRIC POWER CO,US,A-
+141,22218,Energy,Utilities,Electric-Integrated,Sr Unsecured,WISCONSIN ELECTRIC POWER CO,US,A-
+142,22220,Energy,Utilities,Electric-Integrated,Sr Unsecured,INTEGRYS HOLDING INC,US,BBB+
+143,22223,Financials,Financial Services,Finance-Invest Bnkr/Brkr,Sr Unsecured,JEFFERIES GROUP LLC,US,BBB-
+144,22224,Financials,Financial Services,Finance-Invest Bnkr/Brkr,Sr Unsecured,JEFFERIES GROUP LLC,US,BBB-
+145,22226,Consumers,Food & Beverage,Food-Misc/Diversified,Sr Unsecured,KRAFT HEINZ FOODS CO,US,BBB-
+146,22227,Basic Materials,Metals & Mining,Gold Mining,Sr Unsecured,YAMANA GOLD INC,BR,BB+
+147,22231,Technology,Software & Services,Applications Software,Sr Unsecured,CDK GLOBAL INC,US,BB+
+148,22232,Financials,Banks,Commer Banks-Eastern US,Sr Unsecured,GOLDMAN SACHS BANK USA/NEW YORK NY,US,A+
+149,22237,Consumers,Food & Beverage,Food-Misc/Diversified,Sr Unsecured,KRAFT HEINZ FOODS CO,US,BBB-
+150,22239,Consumers,Food & Beverage,Beverages-Wine/Spirits,Sr Unsecured,BACARDI LTD,BM,BBB-
+151,22242,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+152,22243,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+153,22244,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+154,22245,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+155,22247,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+156,22249,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+157,22254,Energy,Pipeline,Pipelines,Sr Unsecured,ENERGY TRANSFER OPERATING LP,US,BBB-
+158,22256,Energy,Pipeline,Pipelines,Sr Unsecured,ENERGY TRANSFER OPERATING LP,US,BBB-
+159,22259,Energy,Pipeline,Pipelines,Sr Unsecured,ENERGY TRANSFER OPERATING LP,US,BBB-
+160,22261,Energy,Pipeline,Pipelines,Sr Unsecured,ENERGY TRANSFER OPERATING LP,US,BBB-
+161,22262,Industrials,Railroad,Transport-Rail,Sr Unsecured,UNION PACIFIC CORP,US,A-
+162,22263,Consumers,Food & Beverage,Beverages-Wine/Spirits,Sr Unsecured,BACARDI LTD,BM,BBB-
+163,22271,Financials,Life Insurance,Life/Health Insurance,Subordinated Unsecured,JACKSON NATIONAL LIFE INSURANCE CO,US,A
+164,22275,Financials,Banks,Commer Banks-Central US,Sr Unsecured,KEYBANK NA/CLEVELAND OH,US,A-
+165,22276,Financials,Banks,Commer Banks-Central US,Sr Unsecured,KEYBANK NA/CLEVELAND OH,US,A-
+166,22277,Financials,Banks,S&L/Thrifts-Eastern US,Sr Unsecured,FIRST NIAGARA FINANCIAL GROUP INC,US,BBB+
+167,22288,Financials,Commercial Finance,Finance-Leasing Compan,Sr Unsecured,AERCAP IRELAND CAPITAL DAC / AERCAP GLOBAL AVIATION TRUST,IE,BBB
+168,22300,Financials,Financial Services,Diversified Banking Inst,Sr Unsecured,CREDIT SUISSE GROUP AG,CH,BBB+
+169,22305,Financials,Banks,Commer Banks-Central US,Sr Unsecured,KEYBANK NA/CLEVELAND OH,US,A-
+170,22321,Industrials,Machinery Manufacturing,Machinery-Pumps,Sr Unsecured,MUELLER WATER PRODUCTS INC,US,BB
+171,22329,Consumers,Travel & Lodging,Hotels&Motels,1st Lien Secured,WYNDHAM DESTINATIONS INC,US,BB-
+172,22344,Financials,Banks,Diversified Banking Inst,Sr Unsecured,DEUTSCHE BANK AG/NEW YORK NY,DE,BBB-
+173,22466,Health Care,Pharmaceuticals,Medical-Drugs,Sr Unsecured,BAYER US FINANCE II LLC,DE,BBB
+174,22941,Health Care,Health Care Facilities & Services,Medical Labs&Testing Srv,Sr Unsecured,QUEST DIAGNOSTICS INC,US,BBB+
+175,23276,Financials,Banks,Commer Banks-Central US,Sr Unsecured,ASSOCIATED BANK NA/GREEN BAY WI,US,BBB+
+176,23285,Consumers,Industrial Other,Rental Auto/Equipment,2nd Lien Secured,ASHTEAD CAPITAL INC,GB,BBB-
+177,23341,Industrials,Machinery Manufacturing,Machinery-Farm,Sr Unsecured,CNH INDUSTRIAL CAPITAL LLC,US,BBB
+178,23369,Industrials,Aerospace & Defense,Aerospace/Defense-Equip,Sr Unsecured,UNITED TECHNOLOGIES CORP,US,BBB+
+179,23410,Health Care,Pharmaceuticals,Medical-Drugs,Sr Unsecured,ASTRAZENECA PLC,GB,BBB+
+180,23479,Communications,Wireless Telecommunications Services,Satellite Telecom,1st Lien Secured,INTELSAT JACKSON HOLDINGS SA,LU,B
+181,23499,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,ENERGEN CORP,US,BBB-
+182,23822,Communications,Advertising & Marketing,Advertising Agencies,Sr Unsecured,INTERPUBLIC GROUP OF COS INC/THE,US,BBB
+183,24011,Health Care,Health Care Facilities & Services,Medical-Hospitals,Sr Unsecured,ENVISION HEALTHCARE CORP,US,Not Founded
+184,24272,Financials,Banks,Super-Regional Banks-US,Sr Unsecured,WELLS FARGO BANK NA,US,A+
+185,25008,Basic Materials,Chemicals,Chemicals-Diversified,Sr Unsecured,DOW CHEMICAL CO/THE,US,BBB
+186,26176,Consumers,Tobacco,Tobacco,Sr Unsecured,BAT CAPITAL CORP,GB,BBB+
+187,26271,Financials,Commercial Finance,Finance-Leasing Compan,Sr Unsecured,AIR LEASE CORP,US,BBB
+188,26290,Financials,Banks,Super-Regional Banks-US,Sr Unsecured,WELLS FARGO & CO,US,A-
+189,26492,Auto,Automobiles Manufacturing,Auto-Cars/Light Trucks,Sr Unsecured,HYUNDAI CAPITAL AMERICA,US,BBB+
+190,26855,Basic Materials,Chemicals,Diversified Manufact Op,Sr Unsecured,3M CO,US,AA-
+191,27126,Real Estate,Real Estate,REITS-Health Care,Sr Unsecured,VENTAS REALTY LP,US,BBB+
+192,28062,Auto,Transportation & Logistics,Auto-Med&Heavy Duty Trks,Sr Unsecured,ALLISON TRANSMISSION INC,US,Not Founded
+193,28272,Real Estate,Real Estate,REITS-Health Care,Sr Unsecured,HCP INC,US,BBB+
+194,28273,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,WHITING PETROLEUM CORP,US,BB-
+195,28408,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,APACHE CORP,US,BBB
+196,28662,Consumers,Food & Beverage,Beverages-Wine/Spirits,Sr Unsecured,BACARDI LTD,BM,BBB-
+197,28690,Industrials,Machinery Manufacturing,Diversified Manufact Op,Sr Unsecured,AMSTED INDUSTRIES INC,US,BB
+198,29104,Communications,Entertainment Content,Multimedia,Sr Unsecured,WALT DISNEY CO/THE,US,A
+199,29787,Real Estate,Real Estate,Real Estate Oper/Develop,Sr Unsecured,ATLANTIC MARINE CORPS COMMUNITIES LLC,US,AA-
+200,29792,Real Estate,Real Estate,Real Estate Oper/Develop,Sr Unsecured,ATLANTIC MARINE CORPS COMMUNITIES LLC,US,AA-
+201,29857,Consumers,Retail - Consumer Discretionary,Rental Auto/Equipment,Sr Unsecured,AVIS BUDGET CAR RENTAL LLC / AVIS BUDGET FINANCE INC,US,BB
+202,29867,Technology,"Design, Manufacturing & Distribution",Electronic Parts Distrib,Sr Unsecured,AVNET INC,US,BBB-
+203,29888,Energy,Power Generation,Energy-Alternate Sources,1st Lien Secured,AZURE POWER ENERGY LTD,IN,Not Founded
+204,29890,Consumers,Food & Beverage,Food-Misc/Diversified,Sr Unsecured,B&G FOODS INC,US,BB-
+205,29892,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,BAE SYSTEMS PLC,GB,BBB
+206,29894,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,BAE SYSTEMS HOLDINGS INC,GB,BBB
+207,29897,Financials,Banks,Commer Banks-Southern US,Subordinated Unsecured,BB&T CORP,US,BBB+
+208,29975,Financials,Banks,Commer Banks Non-US,Subordinated Unsecured,BANCO DE GALICIA Y BUENOS AIRES SAU,AR,CCC
+209,29978,Financials,Banks,Commer Banks Non-US,Sr Unsecured,BANCO DE CREDITO DEL PERU/PANAMA,PE,BBB+
+210,30013,Financials,Banks,Regional Banks-Non US,Sr Unsecured,BANCO DEL ESTADO DE CHILE,CL,A+
+211,30024,Financials,Banks,Commer Banks Non-US,Sr Unsecured,BANCO INBURSA SA INSTITUCION DE BANCA MULTIPLE GRUPO FINANCIERO INBURSA,MX,BBB+
+212,30595,Energy,Utilities,Electric-Integrated,Sr Unsecured,CLECO POWER LLC,US,BBB+
+213,30598,Energy,Utilities,Electric-Integrated,1st Lien Secured,CLECO CORPORATE HOLDINGS LLC,US,BBB-
+214,30602,Energy,Utilities,Electric-Integrated,Sr Unsecured,CLEVELAND ELECTRIC ILLUMINATING CO/THE,US,BBB
+215,30687,Financials,Banks,Money Center Banks,Subordinated Unsecured,COMERICA BANK,US,BBB+
+216,31469,Consumers,Food & Beverage,Food-Misc/Diversified,Sr Unsecured,NESTLE HOLDINGS INC,US,AA-
+217,31772,Financials,Banks,Commer Banks Non-US,Subordinated Unsecured,NORDDEUTSCHE LANDESBANK-GIROZENTRALE,DE,Not Founded
+218,31860,Communications,Wireless Telecommunications Services,Cellular Telecom,Sr Unsecured,EMIRATES TELECOMMUNICATIONS GROUP CO PJSC,AE,AA-
+219,32071,Financials,Banks,Commer Banks Non-US,Sr Unsecured,NATIONAL BANK OF OMAN SAOG,OM,Not Founded
+220,32084,Financials,Property & Casualty Insurance,Reinsurance,Subordinated Unsecured,KOREAN REINSURANCE CO,KR,BBB+
+221,32088,Financials,Banks,Commer Banks Non-US,Sr Unsecured,CHIBA BANK LTD/THE,JP,A
+222,32138,Financials,Banks,Regional Banks-Non US,Sr Unsecured,EMIRATES NBD PJSC,AE,Not Founded
+223,32239,Industrials,Industrial Other,Building-Heavy Construct,Sr Unsecured,HONGKONG INTERNATIONAL QINGDAO CO LTD,CN,BB+
+224,32410,Real Estate,Real Estate,Real Estate Oper/Develop,Sr Unsecured,GENERAL SHOPPING FINANCE LTD,BR,Not Founded
+225,32447,Consumers,Airlines,Airlines,Sr Unsecured,LATAM FINANCE LTD,CL,B+
+226,32620,Consumers,Educational Services,Schools,Sr Unsecured,NORTHWESTERN UNIVERSITY,US,Not Founded
+227,32625,Consumers,Educational Services,Schools,Sr Unsecured,NORTHWESTERN UNIVERSITY,US,Not Founded
+228,32632,Basic Materials,Chemicals,Chemicals-Diversified,Sr Unsecured,NOVA CHEMICALS CORP,CA,BB+
+229,32653,Industrials,Manufactured Goods,Metal Processors&Fabrica,Sr Unsecured,NOVELIS CORP,US,B+
+230,32655,Energy,Utilities,Electric-Integrated,Sr Unsecured,EVERSOURCE ENERGY,US,A-
+231,32705,Consumers,Retail - Consumer Discretionary,Retail-Auto Parts,Sr Unsecured,O'REILLY AUTOMOTIVE INC,US,BBB
+232,32757,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,OIL AND GAS HOLDING CO BSCC/THE,BH,Not Founded
+233,32779,Real Estate,Real Estate,REITS-Health Care,Sr Unsecured,OMEGA HEALTHCARE INVESTORS INC,US,BBB-
+234,32853,Energy,Utilities,Electric-Integrated,Sr Unsecured,ORANGE & ROCKLAND UTILITIES INC,US,A-
+235,32890,Energy,Utilities,Electric-Integrated,Secured,PECO ENERGY CO,US,A
+236,32918,Energy,Utilities,Electric-Integrated,Secured,PPL ELECTRIC UTILITIES CORP,US,A
+237,32929,Energy,Utilities,Electric-Integrated,Sr Unsecured,PPL CAPITAL FUNDING INC,US,BBB+
+238,32930,Energy,Utilities,Electric-Integrated,Sr Unsecured,PPL CAPITAL FUNDING INC,US,BBB+
+239,32934,Energy,Utilities,Electric-Integrated,Sr Unsecured,DUKE ENERGY INDIANA LLC,US,A-
+240,32943,Industrials,Transportation & Logistics,Transport-Marine,Sr Unsecured,PELABUHAN INDONESIA II PT,ID,BBB
+241,32971,Energy,Utilities,Electric-Integrated,Sr Unsecured,PACIFIC GAS & ELECTRIC CO,US,AAA
+242,32972,Energy,Utilities,Electric-Integrated,Sr Unsecured,PACIFIC GAS & ELECTRIC CO,US,AAA
+243,32977,Energy,Utilities,Electric-Integrated,Sr Unsecured,PACIFIC GAS & ELECTRIC CO,US,AAA
+244,32982,Energy,Utilities,Electric-Integrated,Sr Unsecured,PACIFIC GAS & ELECTRIC CO,US,AAA
+245,32997,Energy,Utilities,Electric-Integrated,Secured,PACIFICORP,US,A+
+246,33044,Financials,Banks,Commer Banks Non-US,Sr Unsecured,SANTANDER UK PLC,GB,A
+247,33067,Energy,Utilities,Electric-Integrated,Sr Unsecured,SCANA CORP,US,BBB
+248,33169,Consumers,Retail - Consumer Discretionary,Retail-Automobile,Subordinated Unsecured,PENSKE AUTOMOTIVE GROUP INC,US,B+
+249,33466,Basic Materials,Chemicals,Industrial Gases,Sr Unsecured,PRAXAIR INC,US,A
+250,33481,Energy,Oil & Gas Services & Equipment,Oil&Gas Drilling,Sr Unsecured,PRECISION DRILLING CORP,CA,BB-
+251,33485,Energy,Oil & Gas Services & Equipment,Oil&Gas Drilling,Sr Unsecured,PRECISION DRILLING CORP,CA,BB-
+252,33625,Energy,Utilities,Electric-Integrated,Secured,SOUTHWESTERN PUBLIC SERVICE CO,US,A
+253,33811,Energy,Utilities,Retail-Propane Distrib,Sr Unsecured,SUPERIOR PLUS LP / SUPERIOR GENERAL PARTNER INC,CA,BB
+254,33820,Health Care,Health Care Facilities & Services,Medical-Hospitals,Sr Unsecured,SUTTER HEALTH,US,Not Founded
+255,33953,Industrials,Transportation & Logistics,Transport-Services,Sr Unsecured,TTX CO,US,A
+256,33957,Financials,Commercial Finance,Finance-Leasing Compan,Sr Unsecured,ICBCIL FINANCE CO LTD,CN,Not Founded
+257,34021,Basic Materials,Metals & Mining,Diversified Minerals,Sr Unsecured,TECK RESOURCES LTD,CA,BBB-
+258,34078,Financials,Financial Services,Investment Companies,Sr Unsecured,TEMASEK FINANCIAL I LTD,SG,AAA
+259,34281,Industrials,Manufactured Goods,Metal Processors&Fabrica,Sr Unsecured,TIMKEN CO/THE,US,BBB
+260,35070,Consumers,Food & Beverage,Agricultural Operations,Sr Unsecured,SSMS PLANTATION HOLDINGS PTE LTD,ID,Not Founded
+261,35333,Industrials,Industrial Other,Rental Auto/Equipment,Sr Unsecured,UNITED RENTALS NORTH AMERICA INC,US,BB-
+262,35796,Financials,Financial Services,Invest Mgmnt/Advis Serv,Sr Unsecured,HUASING INTERNATIONAL HOLDINGS CO LTD,CN,Not Founded
+263,36407,Energy,Power Generation,Electric-Generation,Sr Unsecured,NTPC LTD,IN,BBB-
+264,36619,Industrials,Transportation & Logistics,Whsing&Harbor Trans Serv,Sr Unsecured,CHINA MERCHANTS FINANCE CO LTD,CN,BBB
+265,36627,Financials,Banks,Commer Banks Non-US,Sr Unsecured,STATE SAVINGS BANK OF UKRAINE VIA SSB #1 PLC,UA,Not Founded
+266,36694,Financials,Banks,Commer Banks Non-US,Sr Unsecured,AGRICULTURAL BANK OF CHINA LTD,CN,Not Founded
+267,36859,Industrials,Industrial Other,Public Thoroughfares,Sr Unsecured,CENTRAL NIPPON EXPRESSWAY CO LTD,JP,Not Founded
+268,37297,Real Estate,Real Estate,Real Estate Oper/Develop,Sr Unsecured,EMAAR SUKUK LTD,AE,BBB-
+269,37349,Basic Materials,Construction Materials Manufacturing,Bldg Prod-Cement/Aggreg,Sr Unsecured,LAFARGEHOLCIM FINANCE US LLC,CH,BBB
+270,39360,Energy,Utilities,Gas-Distribution,Sr Unsecured,BROOKLYN UNION GAS CO/THE,US,A-
+271,39608,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,2nd Lien Secured,DENBURY RESOURCES INC,US,B
+272,39707,Technology,Software & Services,Enterprise Software/Serv,Sr Unsecured,SOPHIA LP / SOPHIA FINANCE INC,US,CCC
+273,39718,Industrials,Waste & Environment Services & Equipment,Non-hazardous Waste Disp,Sr Unsecured,WASTE MANAGEMENT INC,US,A-
+274,39820,Consumers,Airlines,Airlines,1st Lien Secured,DELTA AIR LINES 2019-1 CLASS AA PASS THROUGH TRUST,US,Not Founded
+275,40196,Technology,Software & Services,Decision Support Softwar,Sr Unsecured,MSCI INC,US,BB+
+276,40252,Energy,Utilities,Electric-Distribution,Sr Unsecured,MID-ATLANTIC INTERSTATE TRANSMISSION LLC,US,BBB
+277,40343,Financials,Banks,Commer Banks Non-US,Jr Subordinated Unsecured,YAPI VE KREDI BANKASI AS,TR,Not Founded
+278,40605,Energy,Coal Operations,Coal,Sr Unsecured,GEO COAL INTERNATIONAL PTE LTD,SG,CCC+
+279,40617,Financials,Life Insurance,Life/Health Insurance,Subordinated Unsecured,MEIJI YASUDA LIFE INSURANCE CO,JP,A-
+280,40917,Energy,Power Generation,Electric-Generation,Sr Unsecured,AES ARGENTINA GENERACION SA,AR,B-
+281,41172,Communications,Publishing & Broadcasting,Multimedia,Sr Unsecured,GLOBO COMUNICACAO E PARTICIPACOES SA,BR,BB+
+282,41227,Financials,Banks,Commer Banks Non-US,1st Lien Secured,INVERSIONES ATLANTIDA SA,HN,B+
+283,41970,Industrials,Electrical Equipment Manufacturing,Electronic Secur Devices,1st Lien Secured,ADT SECURITY CORP/THE,US,BB-
+284,42408,Basic Materials,Metals & Mining,Steel-Producers,Sr Unsecured,ARCELORMITTAL,LU,BBB-
+285,42996,Energy,Utilities,Electric-Transmission,1st Lien Secured,ADANI TRANSMISSION LTD,IN,BBB-
+286,43439,Consumers,Consumer Services,Food-Catering,Sr Unsecured,ARAMARK SERVICES INC,US,BB
+287,43691,Financials,Financial Services,Invest Mgmnt/Advis Serv,Sr Unsecured,LEGG MASON INC,US,BBB
+288,43918,Basic Materials,Metals & Mining,Gold Mining,Sr Unsecured,BARRICK INTERNATIONAL BARBADOS CORP,CA,BBB
+289,44208,Consumers,Department Stores,Retail-Regnl Dept Store,Sr Unsecured,MACY'S RETAIL HOLDINGS INC,US,BBB-
+290,44474,Energy,Utilities,Electric-Integrated,Sr Unsecured,FIRSTENERGY TRANSMISSION LLC,US,BBB-
+291,44477,Energy,Utilities,Electric-Integrated,Sr Unsecured,FIRSTENERGY TRANSMISSION LLC,US,BBB-
+292,45164,Financials,Financial Services,Special Purpose Entity,Secured,HUNT SOUTHERN GROUP LLC,US,Not Founded
+293,46697,Health Care,Pharmaceuticals,Medical-Drugs,Sr Unsecured,BAUSCH HEALTH COS INC,US,B-
+294,46748,Technology,Software & Services,Enterprise Software/Serv,Sr Unsecured,VERITAS US INC / VERITAS BERMUDA LTD,US,CCC
+295,46783,Communications,Cable & Satellite,Cable/Satellite TV,Sr Unsecured,VIRGIN MEDIA FINANCE PLC,GB,B
+296,46840,Consumers,Airlines,Airlines,Sr Unsecured,WESTJET AIRLINES LTD,CA,BBB-
+297,46999,Communications,Communications Equipment,Telecommunication Equip,1st Lien Secured,COMMSCOPE INC,US,B+
+298,47526,Consumers,Retail - Consumer Discretionary,Rental Auto/Equipment,Sr Unsecured,ERAC USA FINANCE LLC,US,A-
+299,48367,Industrials,Transportation & Logistics,Transport-Truck,Sr Unsecured,XPO CNW INC,US,B+
+300,48424,Energy,Oil & Gas Services & Equipment,Oil-Field Services,1st Lien Secured,CSI COMPRESSCO LP / CSI COMPRESSCO FINANCE INC,US,B+
+301,48801,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,CHESAPEAKE ENERGY CORP,US,CCC+
+302,48802,Energy,Exploration & Production,Oil Comp-Explor&Prodtn,Sr Unsecured,CHESAPEAKE ENERGY CORP,US,B-
+303,48867,Communications,Communications Equipment,Networking Products,Sr Unsecured,CISCO SYSTEMS INC,US,AA-
+304,49281,Energy,Utilities,Electric-Distribution,Secured,CONNECTICUT LIGHT & POWER CO/THE,US,A+
+305,49393,Communications,Communications Equipment,Telecom Eq Fiber Optics,Sr Unsecured,CORNING INC,US,BBB+
+306,49396,Communications,Communications Equipment,Telecom Eq Fiber Optics,Sr Unsecured,CORNING INC,US,BBB+
+307,49422,Basic Materials,Metals & Mining,Non-Ferrous Metals,Sr Unsecured,CORP NACIONAL DEL COBRE DE CHILE,CL,A+
+308,49447,Financials,Life Insurance,Life/Health Insurance,Jr Subordinated Unsecured,DAI-ICHI LIFE INSURANCE CO LTD/THE,JP,A-
+309,49783,Energy,Utilities,Electric-Integrated,Secured,ENTERGY TEXAS INC,US,A
+310,50475,Industrials,Manufactured Goods,Metal Processors&Fabrica,Secured,GRINDING MEDIA INC / MOLY-COP ALTASTEEL LTD,US,B
+311,50487,Communications,Cable & Satellite,Cable/Satellite TV,Sr Unsecured,GRUPO TELEVISA SAB,MX,BBB+
+312,50503,Financials,Life Insurance,Multi-line Insurance,Subordinated Unsecured,GUARDIAN LIFE INSURANCE CO OF AMERICA/THE,US,AA-
+313,50523,Energy,Utilities,Electric-Integrated,Sr Unsecured,GULF POWER CO,US,A-
+314,50785,Health Care,Medical Equipment & Devices Manufacturing,Medical Products,Sr Unsecured,HOLOGIC INC,US,BB-
+315,51056,Financials,Property & Casualty Insurance,Property/Casualty Ins,Sr Unsecured,INFINITY PROPERTY & CASUALTY CORP,US,BBB-
+316,51149,Energy,Power Generation,Electric-Generation,Secured,INTERGEN NV,NL,B+
+317,51260,Consumers,Casinos & Gaming,Gambling (Non-Hotel),1st Lien Secured,INTERNATIONAL GAME TECHNOLOGY PLC,US,BB+
+318,51385,Technology,"Design, Manufacturing & Distribution",Electronic Compo-Misc,Sr Unsecured,JABIL INC,US,BBB-
+319,51490,Financials,Financial Services,Finance-Invest Bnkr/Brkr,Sr Unsecured,JEFFERIES GROUP LLC / JEFFERIES GROUP CAPITAL FINANCE INC,US,BBB-
+320,51795,Communications,Wireless Telecommunications Services,Cellular Telecom,Sr Unsecured,MOBILE TELESYSTEMS OJSC VIA MTS INTERNATIONAL FUNDING LTD,RU,BB+
+321,51854,Health Care,Managed Care,Medical-HMO,Sr Unsecured,MAGELLAN HEALTH INC,US,BB+
+322,52000,Industrials,Aerospace & Defense,Aerospace/Defense,Sr Unsecured,LEONARDO US HOLDINGS INC,IT,BB+
+323,52063,Financials,Life Insurance,Multi-line Insurance,Secured,METROPOLITAN LIFE GLOBAL FUNDING I,US,AA-

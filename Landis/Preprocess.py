@@ -66,6 +66,8 @@ def process_rating_data(data):
     rating['RatingSP'] = rating['RatingSP'].apply(lambda x:assign_rating(x))
     return rating
 
+####Get the weekly spread voality:
+
 ####Data perprocess pipline
 def process_data(start_date,windows=61):
     start_time = time.time()
@@ -76,8 +78,8 @@ def process_data(start_date,windows=61):
     data = pd.read_csv("C:/Users/y437l/OneDrive/MMAI/Capstone/Data/1.csv")
     file_lists = ['14426.csv','24001.csv','36128.csv','48087.csv','55086.csv']
     final_data = merge_data(file_lists,data)
+    # final_data = data
     final_data.dropna(subset=["ZSpread"], inplace=True)
-    #final_data = data
     ###left join the currency data into the spread data
     final_data = final_data.merge(security_data, on=['SecurityID'], how='left')
     ###select currency as USD
@@ -110,7 +112,7 @@ def process_data(start_date,windows=61):
             pass
     print(len(bond_spread_list))
     #########################################################
-    print("--- %s seconds ---" % (time.time() - start_time),'Next Step:Merging data')
+    #print("--- %s seconds ---" % (time.time() - start_time),'Next Step:Merging data')
     ##########################################################
     #for n in range(1,len(bond_spread_list)):
         #new_data = new_data.append(bond_spread_list[n][2])
@@ -122,7 +124,7 @@ def process_data(start_date,windows=61):
     ##########################################################
     ## Conduct a Min_Max Scale for the precentage change
     new_data[['G_change']] = sc.fit_transform(new_data[['G_change']], y=None)
-    #print(new_data)
+    print(new_data[['G_change']].min)
 
     final_data_2 = new_data.groupby('SecurityID')
     bonds_list_2 = [final_data_2.get_group(x) for x in final_data_2.groups]
@@ -134,7 +136,7 @@ def process_data(start_date,windows=61):
     bond_spread_change_scaled_list = []
 
     for bond in bonds_list_2:
-        bond_spread_change_scaled_list.append((len(bond.G_change.values), bond.SecurityID.iloc[0], bond.G_change.values[1:]))
+        bond_spread_change_scaled_list.append((len(bond.G_change.values), bond.SecurityID.iloc[0], bond.G_change.values))
 
     ####select the trading days with 90
     test_cluster_1 = select_data(windows, bond_spread_change_scaled_list)
@@ -142,4 +144,4 @@ def process_data(start_date,windows=61):
     test_cluster_1_with_spread = select_spread_data(test_cluster_1)
     print('Done')
     return bond_spread_change_scaled_list, test_cluster_1_with_spread
-   # return bond_spread_list, test_cluster_1_with_spread
+    #return bond_spread_list, test_cluster_1_with_spread

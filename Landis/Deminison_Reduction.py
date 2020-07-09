@@ -30,4 +30,5 @@ def dfft(s1):
 ###similar bonds should have similiar major trend
 def seasonal_decomp(time_series):
     result = seasonal_decompose(time_series.tolist(), model='Additive', freq=7)
+    result.plot()
     return result.trend
