@@ -1,58 +1,67 @@
 ## Using K-means method to cluster the data
-from Preprocess import *
-from utilitie import *
-from distance_metric import *
+from Preprocess import get_all_bonds_in_list, get_the_windows, merg_sort
+from utility import grab_clusters, create_cluster_list, transfer_to_list_of_pd, process_rating_data,collect_cluster_info
+from feature_extraction import tsfresh_extract
 import pandas as pd
-import datetime
-import time
+from sklearn.cluster import KMeans
+import pickle
+import mysql.connector as sql
 
-start_date ='2018-12-31'
-time_list = start_date.split('-')
-year = int(time_list[0])
-month = int(time_list[1])
-date = int(time_list[2])
-start_datetime = datetime.datetime(year, month, date)
-###find the end date:
-end_datetime = start_datetime + datetime.timedelta(days=90)
-end_date = str(end_datetime)
-
-#####windows defult 62
-bond_spread_list,test_cluster_1_with_spread_change = process_data(start_date)
-
-###################
-###security data###
-###################
-security_data = pd.read_csv("C:/Users/y437l/OneDrive/MMAI/Capstone/Data/SecurityData - Copy-LAPTOP-OAEJRPE8.csv")
-###################
-### Rating Data####
-###################
-rating_data = process_rating_data(pd.read_csv("C:/Users/y4 37l/OneDrive/MMAI/Capstone/Data/Rating.csv"))
+####read security data:
+db_connection = sql.connect(host='0.0.0.0', database='bond_db', user='root', password='password')
+security_query = "select * from security_info"
+security_data = pd.read_sql(security_query, con=db_connection)
 
 ##########################
 ### K Mean APPROACH ######
 ###########################
-from pyclustering.cluster.elbow import elbow
-from pyclustering.cluster.kmeans import kmeans
-from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer
-from pyclustering.utils.metric import type_metric, distance_metric
-# read sample 'Simple3' from file (sample contains four clusters)
-market_data = test_cluster_1_with_spread_change
-user_function = lambda series1, series2: DTWDistance(series1, series2)
-metric = distance_metric(type_metric.USER_DEFINED, func =user_function)
-#metric = distance_metric(type_metric.EUCLIDEAN)
-# create instance of Elbow method using K value from 1 to 10.
-kmin, kmax = 1, 100
-elbow_instance = elbow(market_data, kmin, kmax,metric=metric)
-# process input data and obtain results of analysis
-elbow_instance.process()
-amount_clusters = elbow_instance.get_amount()   # most probable amount of clusters
-wce = elbow_instance.get_wce()                  # total within-cluster errors for each K
-# perform cluster analysis using K-Means algorith
-centers = kmeans_plusplus_initializer(market_data, amount_clusters).initialize()
-kmeans_instance = kmeans(market_data, centers)
-kmeans_instance.process()
-# obtain clustering results and visualize them
-clusters = kmeans_instance.get_clusters()
-centers = kmeans_instance.get_centers()
-clusters_list = grab_clusters(clusters,bond_spread_list,security_data,rating_data)
-clusters_data_list = transfer_to_list_of_pd(clusters_list)
+def kmeans(data_scaled, number_of_cluster, date,fdata):
+	print('start to do Kmean Model with {} cluster'.format(number_of_cluster))
+	kmeans = KMeans(n_clusters=number_of_cluster, random_state=42).fit(data_scaled)
+	clusters3 = create_cluster_list(kmeans.labels_)
+	clusters_list3 = grab_clusters(clusters3, fdata, security_data, rating_data)
+	clusters_data_list3 = transfer_to_list_of_pd(clusters_list3)
+	pickle.dump(kmeans, open("Bond_KmeanClustering_{}Groups_{}.pkl".format(number_of_cluster, date), "wb"))
+	print('Saved Kmean Model, Grabed Cluster information','Done')
+	return clusters_data_list3
+
+
+#######Define the windows through years
+silding_windows = [['2018-12-31','2019-02-28'],['2019-03-01','2019-04-30'],
+                   ['2019-05-01','2019-06-30'],['2019-07-01','2019-08-31'],
+                   ['2019-09-01','2019-10-31'],['2019-11-01','2019-12-31']]
+
+####Create a dict with cluster_list through year
+clusters_dict = {}
+for i in silding_windows:
+	start_date = i[0]
+	end_date = i[1]
+	#####read rating data:
+	rating_query = "select * from rating where KeyDate between '{}' and '{}'".format(start_date, end_date)
+	rating_data = pd.read_sql(rating_query, con=db_connection)
+	rating_data = process_rating_data(rating_data)
+	#####create the bonds list
+	bonds_list = get_all_bonds_in_list(start_date, end_date)
+	####transfer the daily data into weekly data
+	bond_spread_list = get_the_windows(bonds_list)
+	new_data = merg_sort(bond_spread_list)
+	new_data.dropna(inplace=True)
+	data_scaled,fdata = tsfresh_extract(new_data)
+	cluster = kmeans(data_scaled, 24, i[1],fdata)
+	if i[1] not in clusters_dict.keys():
+		clusters_dict[i[1]] = cluster
+##Close the db connection
+db_connection.close()
+
+for i in range(0, len(clusters_dict.keys())):
+	end_date = list(clusters_dict.keys())[i]
+	temp_list = clusters_dict[end_date]
+	if i == 0:
+		final_cluster = collect_cluster_info(temp_list, end_date)
+	else:
+		temp_data = collect_cluster_info(temp_list, end_date)
+		final_cluster = final_cluster.merge(temp_data,on=['SecurityID'],how='outer')
+
+final_cluster.to_csv('Cluster_group.csv')
+print('Done')
+
