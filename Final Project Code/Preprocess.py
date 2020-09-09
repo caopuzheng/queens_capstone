@@ -95,13 +95,90 @@ def get_the_daily_spread_windows(bonds_list):
     return bond_spread_list
 ###calcuate the daily average GSpread per cluster
 def Average_daily_Gspread_change_cluster(window,cluster_data):
+    ####Grab Data###
     bond_list1 = get_all_bonds_in_list(window[0],window[1])
+    ####G Change ###
     daily_spread_1 = get_the_daily_spread_windows(bond_list1)
     new_data = merg_sort(daily_spread_1)
     new_data.dropna(inplace=True)
     data1 = new_data.merge(cluster_data[['SecurityID',window[1]]],on=['SecurityID'],how ='left')
     temp = data1.groupby(by=['KeyDate',window[1]],as_index=False).mean()
     data1['Group'] = data1[window[1]]
+    data1.drop(columns=[window[1]],inplace=True)
     temp['Group'] = temp[window[1]]
-    end = temp[['Group','KeyDate','G_change']]
+    end = temp[['Group','KeyDate','G_change','YieldWorst_change','ModifiedDuration_Plain_change']]
+    end = end.rename(columns={'G_change':'Cluster_G_change','YieldWorst_change':'Cluster_average_YieldWorst_change','ModifiedDuration_Plain_change':'Cluster_average_ModifiedDuration_Plain_change'})
     return end,data1
+
+####transfer the data into lag
+def find_lag(X):
+    a = X.T
+    for index in a.index:
+        columns_name = []
+        for x in range(0,3):
+            columns_name.append(index+'_lag_{}'.format(x+1))
+        if index == 'YieldWorst':
+            final = pd.DataFrame(a.loc[index].values.reshape(-1, 3),columns=columns_name)
+        else:
+            temp = pd.DataFrame(a.loc[index].values.reshape(-1, 3),columns=columns_name)
+            final = pd.concat([final,temp],axis=1)
+    return final
+
+###Preprocess function for Regression Feature engineering
+def get_the_daily_spread_windows(bonds_list):
+    bond_spread_list = []
+    for bond in bonds_list:
+        try:
+            bond['G_change']=bond.GSpread.pct_change()
+            bond['ModifiedDuration_Plain_change']=bond.ModifiedDuration_Plain.pct_change()
+            bond['YieldWorst_change']=bond.YieldWorst.pct_change()
+            bond.dropna(subset=['G_change'],inplace = True)
+            bond_spread_list.append((len(bond.GSpread.values),bond.SecurityID.iloc[0],bond))
+        except:
+            pass
+    return bond_spread_list
+
+####
+def get_all_bonds_in_list(start_date,end_date):
+    print('start to get data from {} to {}'.format(start_date,end_date))
+    #####Create engine:
+    db_connection = sql.connect(host='0.0.0.0', database='bond_db', user='root', password='password')
+    ##security query
+    security_query = "select * from security_info"
+    ##read data
+    security_data = pd.read_sql(security_query,con=db_connection)
+    security_data = security_data[['SecurityID','Currency','IssueDate','MaturityDate']]
+    ##price query
+    price_query = "select * from bond_spread where  KeyDate between '{}' and '{}'".format(start_date,end_date)
+    #####read bond_data from db:
+    final_data = pd.read_sql(price_query,con=db_connection)
+    final_data = final_data.merge(security_data, on=['SecurityID'], how='left')
+    final_data.dropna(subset=["ZSpread"],inplace=True)
+    final_data_1 = final_data[final_data.Currency == 'USD']
+    final_data = final_data_1.groupby('SecurityID')
+    bonds_list = [final_data.get_group(x) for x in final_data.groups]
+    db_connection.close()
+    return bonds_list
+
+def get_the_cluster_data(security_info,cluster_data,windows,num_of_cluster):
+    print('start to get data for {}'.format(windows[1]))
+    security_info = security_info[['SecurityID','AmountIssued','Coupon','Seniority','Term','RatingSP']]
+    a = security_info.merge(cluster_data[['SecurityID',windows[1]]],on=['SecurityID'],how='left')
+    a.dropna(subset=[windows[1]],inplace=True)
+    a = a.rename(columns={windows[1]:'Group'})
+    c = a.groupby(by=['Group','Seniority']).count()
+    d = a.groupby(by=['Group']).count()
+    e = c/d
+    for i in range(0,num_of_cluster):
+        if i == 0:
+            f = e.loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
+            f['Group'] ='Cluster {}'.format(i)
+        else:
+            temp = e.loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
+            temp['Group'] ='Cluster {}'.format(i)
+            f = f.merge(temp,how='outer').fillna(0)
+    b = a.groupby(by=['Group'],as_index=False).mean()
+    b.drop(columns=['SecurityID'],inplace=True)
+    b = b.rename(columns={'AmountIssued':'Cluster_average_AmountIssued','Coupon':'Cluster_average_Coupon','Term':'Cluster_average_Term','RatingSP':'Cluster_average_Rating'})
+    window_cluster_data = b.merge(f,on='Group',how = 'left')
+    return window_cluster_data

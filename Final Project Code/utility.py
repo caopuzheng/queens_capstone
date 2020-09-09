@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
+from Preprocess import Average_daily_Gspread_change_cluster
 
 #####Transfer the list of cluster bond security ids to pandas dataframe
 def transfer_to_list_of_pd(clusters_list):
@@ -93,7 +94,7 @@ def collect_cluster_info(clusters_data_list,end_date):
     cluster_info = pd.DataFrame()
     cluster_data = clusters_data_list[0][['SecurityID','Group']]
     for i in range(1,len(clusters_data_list)):
-        temp  = clusters_data_list[i][['SecurityID','Group']]
+        temp = clusters_data_list[i][['SecurityID','Group']]
         cluster_data = cluster_data.append(temp,ignore_index=True)
     cluster_info['SecurityID'] = cluster_data['SecurityID']
     cluster_info[end_date] = cluster_data['Group']
@@ -106,3 +107,19 @@ def dump_data(data,database,table):
     engine.dispose()
     print('Dump data to db {}, table {}'.format(database,table))
 
+
+def dump_Gspread_change_per_cluster(silding_windows,table,cluster_data):
+    for i in silding_windows:
+        temp_data,temp_d = Average_daily_Gspread_change_cluster(i,cluster_data)
+        dump_data(temp_data,'bond_db',table)
+
+def get_the_daily_spread_windows(bonds_list):
+    bond_spread_list = []
+    for bond in bonds_list:
+        try:
+            bond['G_change']=bond.GSpread.pct_change()
+            bond.dropna(subset=['G_change'],inplace = True)
+            bond_spread_list.append((len(bond.GSpread.values),bond.SecurityID.iloc[0],bond))
+        except:
+            pass
+    return bond_spread_list

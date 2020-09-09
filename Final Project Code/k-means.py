@@ -27,9 +27,9 @@ def kmeans(data_scaled, number_of_cluster, date,fdata):
 
 
 #######Define the windows through years
-silding_windows = [['2018-12-31','2019-02-28'],['2019-03-01','2019-04-30'],
-                   ['2019-05-01','2019-06-30'],['2019-07-01','2019-08-31'],
-                   ['2019-09-01','2019-10-31'],['2019-11-01','2019-12-31']]
+silding_windows = [['2018-12-31','2019-03-03'],['2019-01-07','2019-03-10'],
+                   ['2019-01-14','2019-03-17'],['2019-01-21','2019-03-24'],
+                   ['2019-01-28','2019-03-24'],['2019-02-04','2019-03-31']]
 
 ####Create a dict with cluster_list through year
 clusters_dict = {}
@@ -47,7 +47,7 @@ for i in silding_windows:
 	new_data = merg_sort(bond_spread_list)
 	new_data.dropna(inplace=True)
 	data_scaled,fdata = tsfresh_extract(new_data)
-	cluster = kmeans(data_scaled, 24, i[1],fdata)
+	cluster = kmeans(data_scaled, 125, i[1],fdata)
 	if i[1] not in clusters_dict.keys():
 		clusters_dict[i[1]] = cluster
 ##Close the db connection
@@ -62,6 +62,6 @@ for i in range(0, len(clusters_dict.keys())):
 		temp_data = collect_cluster_info(temp_list, end_date)
 		final_cluster = final_cluster.merge(temp_data,on=['SecurityID'],how='outer')
 
-final_cluster.to_csv('Cluster_group.csv')
+final_cluster.to_csv('Cluster_group_rolling.csv')
 print('Done')
 
