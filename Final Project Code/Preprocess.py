@@ -2,7 +2,6 @@
 import pandas as pd
 import math
 import mysql.connector as sql
-from utility import *
 
 ####check the outlier change for the bond:
 def check_outlier(x):
@@ -85,21 +84,22 @@ def get_all_bonds_in_list(start_date,end_date):
     return bonds_list
 
 ### Select data and calucate daily data based on a given date range
-def get_the_daily_spread_windows(bonds_list):
+def get_the_daily_abs_spread_windows(bonds_list):
     bond_spread_list = []
     for bond in bonds_list:
         try:
             bond['G_change_Percent']=bond.GSpread.pct_change()
             bond['G_change'] = bond.GSpread.diff()
+            bond['ModifiedDuration_Plain_change']=bond.ModifiedDuration_Plain.pct_change()
+            bond['YieldWorst_change']=bond.YieldWorst.pct_change()
             bond.dropna(subset=['G_change'],inplace = True)
             bond_spread_list.append((len(bond.GSpread.values),bond.SecurityID.iloc[0],bond))
         except:
             pass
     return bond_spread_list
 
-### Select data and calucate Weekly data based on a given date range
-
-def get_the_weekly_spread_windows(bonds_list):
+### Select calucate Weekly change based on a given date date range
+def get_the_abs_weekly_spread_windows(bonds_list):
     bond_spread_list = []
     for bond in bonds_list:
         try:
@@ -123,12 +123,37 @@ def get_the_weekly_spread_windows(bonds_list):
             pass
     return bond_spread_list
 
-###calcuate the daily average GSpread per cluster
-def Average_daily_Gspread_change_cluster(window,cluster_data):
+def combine_data(List1,num_of_clusters):
+    final = []
+    length = len(List1)
+    for j in range(0,length):
+        for i in range(0,num_of_clusters):
+            if i == 0:
+                f = List1[j].loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
+                f['Group'] ='Cluster {}'.format(i)
+            else:
+                temp = List1[j].loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
+                temp['Group'] ='Cluster {}'.format(i)
+                f = f.merge(temp,how='outer').fillna(0)
+        final.append(f)
+    for i in range(0,len(final)):
+        if i == 0:
+            f_data = final[i]
+        else:
+            f_data = f_data.merge(final[i],on='Group',how = 'left')
+    return f_data
+
+###calcuate the daily/weekly average GSpread percent and absolute change for each cluster
+def Average_Gspread_abs_change_cluster(window,cluster_data,type):
     ####Grab Data###
     bond_list1 = get_all_bonds_in_list(window[0],window[1])
     ####G Change ###
-    daily_spread_1 = get_the_weekly_spread_windows(bond_list1)
+    if type == 'weekly':
+        daily_spread_1 = get_the_abs_weekly_spread_windows(bond_list1)
+    elif type == 'daily':
+        daily_spread_1 = get_the_daily_abs_spread_windows(bond_list1)
+    else:
+        print('Please enter daily for daily spread change, weekly for weekly spread change')
     new_data = merg_sort(daily_spread_1)
     new_data.dropna(inplace=True)
     data1 = new_data.merge(cluster_data[['SecurityID',window[1]]],on=['SecurityID'],how ='left')
@@ -136,9 +161,10 @@ def Average_daily_Gspread_change_cluster(window,cluster_data):
     data1['Group'] = data1[window[1]]
     data1.drop(columns=[window[1]],inplace=True)
     temp['Group'] = temp[window[1]]
-    end = temp[['Group','KeyDate','G_change_Percent','YieldWorst_change','ModifiedDuration_Plain_change']]
-    end = end.rename(columns={'G_change_Percent':'Cluster_G_change','YieldWorst_change':'Cluster_average_YieldWorst_change','ModifiedDuration_Plain_change':'Cluster_average_ModifiedDuration_Plain_change'})
+    end = temp[['Group','KeyDate','G_change','YieldWorst_change','ModifiedDuration_Plain_change']]
+    end = end.rename(columns={'G_change':'Cluster_G_change','YieldWorst_change':'Cluster_average_YieldWorst_change','ModifiedDuration_Plain_change':'Cluster_average_ModifiedDuration_Plain_change'})
     return end,data1
+
 
 ####transfer the data into lag(not in used)
 def find_lag(X):
@@ -154,19 +180,6 @@ def find_lag(X):
             final = pd.concat([final,temp],axis=1)
     return final
 
-###Preprocess function for Regression Feature engineering
-def get_the_daily_spread_windows(bonds_list):
-    bond_spread_list = []
-    for bond in bonds_list:
-        try:
-            bond['G_change']=bond.GSpread.pct_change()
-            bond['ModifiedDuration_Plain_change']=bond.ModifiedDuration_Plain.pct_change()
-            bond['YieldWorst_change']=bond.YieldWorst.pct_change()
-            bond.dropna(subset=['G_change'],inplace = True)
-            bond_spread_list.append((len(bond.GSpread.values),bond.SecurityID.iloc[0],bond))
-        except:
-            pass
-    return bond_spread_list
 
 ### Use in getting cluster's information
 def get_the_cluster_data(security_info, cluster_data, windows):

@@ -6,7 +6,9 @@ import pandas as pd
 from sklearn.cluster import KMeans
 import pickle
 import mysql.connector as sql
+from windows import silding_windows
 
+silding_windows = silding_windows
 ####read security data:
 db_connection = sql.connect(host='0.0.0.0', database='bond_db', user='root', password='password')
 security_query = "select * from security_info"
@@ -26,10 +28,6 @@ def kmeans(data_scaled, number_of_cluster, date,fdata):
 	return clusters_data_list3
 
 
-#######Define the windows through years
-silding_windows = [['2018-12-31','2019-03-03'],['2019-01-07','2019-03-10'],
-                   ['2019-01-14','2019-03-17'],['2019-01-21','2019-03-24'],
-                   ['2019-01-28','2019-03-24'],['2019-02-04','2019-03-31']]
 
 ####Create a dict with cluster_list through year
 clusters_dict = {}

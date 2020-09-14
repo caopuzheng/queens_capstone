@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
-from Preprocess import Average_daily_Gspread_change_cluster
+from Preprocess import Average_Gspread_abs_change_cluster
 import math
 
 #####Transfer the list of cluster bond security ids to pandas dataframe
@@ -115,7 +115,7 @@ def dump_data(data,database,table):
 def dump_Gspread_change_per_cluster(silding_windows,table,cluster_data,database):
     engine = create_engine('mysql+pymysql://root:password@0.0.0.0:3306/{}'.format(database))
     for i in silding_windows:
-        temp_data,temp_d = Average_daily_Gspread_change_cluster(i,cluster_data)
+        temp_data,temp_d = Average_Gspread_abs_change_cluster(i,cluster_data,'daily')
         dump_data(temp_data,'bond_db',table)
     engine.dispose()
 
@@ -130,25 +130,6 @@ def get_the_daily_spread_windows(bonds_list):
             pass
     return bond_spread_list
 
-def combine_data(List1,num_of_clusters):
-    final = []
-    length = len(List1)
-    for j in range(0,length):
-        for i in range(0,num_of_clusters):
-            if i == 0:
-                f = List1[j].loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
-                f['Group'] ='Cluster {}'.format(i)
-            else:
-                temp = List1[j].loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
-                temp['Group'] ='Cluster {}'.format(i)
-                f = f.merge(temp,how='outer').fillna(0)
-        final.append(f)
-    for i in range(0,len(final)):
-        if i == 0:
-            f_data = final[i]
-        else:
-            f_data = f_data.merge(final[i],on='Group',how = 'left')
-    return f_data
 
 def term(x,y):
     try:
@@ -156,3 +137,11 @@ def term(x,y):
     except:
         bond_term = 100
     return bond_term
+
+def Type_term(x):
+    if x >= 10:
+        return 'Long Term'
+    elif x < 10 and x >= 5:
+        return  'Mid Term'
+    else:
+        return 'Short Term'
