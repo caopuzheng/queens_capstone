@@ -1,51 +1,53 @@
-###Import Library
+from Regression_Data_Preprocessing import Regression_Preprocessing
 import pandas as pd
 import numpy as np
-import pandas as pd
-import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error,r2_score
 import xgboost as xgb
-from sklearn.metrics import mean_squared_error
-import xgboost as xgb
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import Normalizer
 from sklearn.model_selection import train_test_split
-import math
-import datetime
+import matplotlib.pyplot as plt
 
-##### Read Preprocessed Data & Preprocess data for feature Regression
-data = pd.read_csv('Security_and_market_movement_unscaled_cluster125.csv')
-### Drop the 'Unnamed: 0'
-data.drop(columns=['Unnamed: 0'],inplace=True)
+###Change Your Weekly or Daily accordingly here:
+data = Regression_Preprocessing(pd.read_csv('Data/Security_and_market_movement_unscaled_cluster125.csv'))
 
-### Change the Bond's G_spread_change to basepoint which * 10000
-data['cluster_G_change'] = data['cluster_G_change'] * (10000)
-data['Target_G_change'] = data['Target_G_change'] * (10000)
+###Get X and Y from the data:
+X,Y = data.Preprocessing()
 
-#### Drop a duplicate columns
-data.drop(columns=['G_change'],inplace=True)
+### Split the X,Y to training and testing data:
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=10)
 
-#### Rename the Percentage of Type of Bond in the Cluster
-data = data.rename(columns={ 'Jr Subordinated Unsecured':'Cluster Perecentage of Jr Subordinated Unsecured',
-                     'Secured':'Cluster Perecentage of Secured',
-                     'Sr Unsecured':'Cluster Perecentage of Unsecured',
-                     'Subordinated Unsecured':'Cluster Perecentage of Subordinated Unsecured',
-                     '1st Lien Secured':'Cluster Perecentage of 1st Lien Secured',
-                     '2nd Lien Secured':'Cluster Perecentage of 2nd Lien Secured',
-                     '3rd Lien Secured':'Cluster Perecentage of 3rd Lien Secured',
-                     '1st lien':'Cluster Perecentage of 1st Lien',
-                     'Asset Backed':'Cluster Perecentage of Asset Backed'})
+### set up the the xgb regression:
+xg_reg = xgb.XGBRegressor(objective ='reg:squarederror', colsample_bytree = 0.1, learning_rate = 0.1,
+                max_depth =100, alpha = 100, n_estimators = 100)
 
-### Remove the moving average of the market data
-data_1 = data.drop(columns = ['skew_change_Weekly','swap_change_Weekly','vix_change_Weekly','Close_change_Weekly','slope_change_Weekly','AmtOutstanding'])
+### Xgboost fit the X_train and Y_train:
+xg_reg.fit(X_train,y_train)
 
-### Read Preprocessed dummy variable
-dummy_variable = pd.read_csv('Security_info_post_dummy.csv')
-dummy_variable.drop(columns=['Unnamed: 0'],inplace=True)
-### Merge the dummy variable to the market&security change
-data_1 = data_1.merge(dummy_variable,on=['SecurityID'],how='left')
+### Predict the Training and Test set:
+preds = xg_reg.predict(X_test)
+pred_train= xg_reg.predict(X_train)
 
-###Select a given period:
-data_1['KeyDate'] = pd.to_datetime(data_1['KeyDate'])
-data_1 = data_1[data_1['KeyDate']<= datetime.datetime(2019,2,28)]
+###Evaluate the Prediction Result:
+rmse_test = np.sqrt(mean_squared_error(y_test, preds))
+rmse_train = np.sqrt(mean_squared_error(y_train, pred_train))
+print("RMSE Test: %f" % (rmse_test))
+print("RMSE Train: %f" % (rmse_train))
+r2_test = r2_score(y_test, preds)
+r2_train = r2_score(y_train,pred_train)
+print("Test R2:{}".format(r2_test))
+print("Train R2:{}".format(r2_train))
+
+##Plot Feature importance:
+xgb.plot_importance(xg_reg)
+plt.rcParams['figure.facecolor'] = 'white'
+plt.rcParams['figure.figsize'] = [500, 500]
+plt.rcParams.update({'font.size': 34})
+plt.title('Feature importance')
+plt.xlabel('F1')
+plt.ylabel('Feature')
+plt.show()
+
+##Plot Xgboost Decision Tree:
+import matplotlib.pyplot as plt
+xgb.plot_tree(xg_reg,num_trees=0,rankdir='LR')
+plt.rcParams['figure.figsize'] = [100, 100]
+plt.show()

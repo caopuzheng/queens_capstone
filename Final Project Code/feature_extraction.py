@@ -1,11 +1,7 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
-import seaborn as sns
 from tsfresh import extract_features
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import normalize,StandardScaler
+from sklearn.preprocessing import normalize
+
 ##extract time series feature from the time series
 def tsfresh_extract(new_data):
     sc = MinMaxScaler()

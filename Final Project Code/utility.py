@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 from Preprocess import Average_daily_Gspread_change_cluster
+import math
 
 #####Transfer the list of cluster bond security ids to pandas dataframe
 def transfer_to_list_of_pd(clusters_list):
@@ -17,18 +18,21 @@ def transfer_to_list_of_pd(clusters_list):
 ##### Assign rating to bonds based on the rating rate.
 def assign_rating(x):
     x = float(x)
-    if x < 0:
-        return 'NR'
-    elif x<=13.5:
-        return "Junk"
-    elif x>13.5 and x<=16.5:
-        return 'Lower medium grade'
-    elif x>16.5 and x<=19.5:
-        return 'Upper medium grade'
-    elif x>19.5 and x<=22.5:
-        return 'High grade'
+    if math.isnan(x):
+        return 'UN'
     else:
-        return 'Prime'
+        if x < 0:
+            return 'NR'
+        elif x<=13.5:
+            return "Junk"
+        elif x>13.5 and x<=16.5:
+            return 'Lower medium grade'
+        elif x>16.5 and x<=19.5:
+            return 'Upper medium grade'
+        elif x>19.5 and x<=22.5:
+            return 'High grade'
+        else:
+            return 'Prime'
 
 ####Assign rating
 def process_rating_data(data):
@@ -107,11 +111,13 @@ def dump_data(data,database,table):
     engine.dispose()
     print('Dump data to db {}, table {}'.format(database,table))
 
-
-def dump_Gspread_change_per_cluster(silding_windows,table,cluster_data):
+####Dump the Gspread change
+def dump_Gspread_change_per_cluster(silding_windows,table,cluster_data,database):
+    engine = create_engine('mysql+pymysql://root:password@0.0.0.0:3306/{}'.format(database))
     for i in silding_windows:
         temp_data,temp_d = Average_daily_Gspread_change_cluster(i,cluster_data)
         dump_data(temp_data,'bond_db',table)
+    engine.dispose()
 
 def get_the_daily_spread_windows(bonds_list):
     bond_spread_list = []
@@ -123,3 +129,30 @@ def get_the_daily_spread_windows(bonds_list):
         except:
             pass
     return bond_spread_list
+
+def combine_data(List1,num_of_clusters):
+    final = []
+    length = len(List1)
+    for j in range(0,length):
+        for i in range(0,num_of_clusters):
+            if i == 0:
+                f = List1[j].loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
+                f['Group'] ='Cluster {}'.format(i)
+            else:
+                temp = List1[j].loc['Cluster {}'.format(i)].T.head(1).reset_index().iloc[:,1:]
+                temp['Group'] ='Cluster {}'.format(i)
+                f = f.merge(temp,how='outer').fillna(0)
+        final.append(f)
+    for i in range(0,len(final)):
+        if i == 0:
+            f_data = final[i]
+        else:
+            f_data = f_data.merge(final[i],on='Group',how = 'left')
+    return f_data
+
+def term(x,y):
+    try:
+        bond_term = int(x.year) - int(y.year)
+    except:
+        bond_term = 100
+    return bond_term
