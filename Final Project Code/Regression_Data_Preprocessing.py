@@ -12,7 +12,7 @@ class Regression_Preprocessing:
 		self.data.drop(columns=['Unnamed: 0'],inplace=True)
 
 		### Remove the moving average of the market data
-		data_1 = self.data.drop(columns = ['skew_change_Weekly','swap_change_Weekly','vix_change_Weekly','Close_change_Weekly','slope_change_Weekly','AmtOutstanding'])
+		data_1 = self.data.drop(columns = ['YieldWorst','YieldWorst_change','ModifiedDuration_Plain_change','skew_change_Weekly','swap_change_Weekly','vix_change_Weekly','Close_change_Weekly','slope_change_Weekly'])
 
 		### Read Preprocessed dummy variable
 		dummy_variable = pd.read_csv('Data/Security_info_post_dummy.csv')

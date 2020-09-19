@@ -6,9 +6,9 @@ import pandas as pd
 from sklearn.cluster import KMeans
 import pickle
 import mysql.connector as sql
-from windows import silding_windows
+from windows import silding_windows,Rolling_windows
 
-silding_windows = silding_windows
+silding_windows = Rolling_windows
 ####read security data:
 db_connection = sql.connect(host='0.0.0.0', database='bond_db', user='root', password='password')
 security_query = "select * from security_info"
