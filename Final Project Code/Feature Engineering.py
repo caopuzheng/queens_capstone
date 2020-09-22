@@ -42,11 +42,11 @@ security_data['Rating'] = security_data['RatingSP'].apply(assign_rating)
 for i in range(0,len(silding_windows)):
     if i == 0:
         ###chaneg daily to weekly if you want to have weekly spread change
-        final_change,final = Average_Gspread_abs_change_cluster(silding_windows[i],cluster_data,'daily')
+        final_change,final = Average_Gspread_abs_change_cluster(silding_windows[i],cluster_data,'weekly')
         temp_cluster = feature_engineer_cluster_data(security_data,cluster_data,silding_windows[i])
         final = final.merge(temp_cluster, on='Group',how='left')
     else:
-        temp,temp_data = Average_Gspread_abs_change_cluster(silding_windows[i],cluster_data,'daily')
+        temp,temp_data = Average_Gspread_abs_change_cluster(silding_windows[i],cluster_data,'weekly')
         temp_cluster = feature_engineer_cluster_data(security_data,cluster_data,silding_windows[i])
         temp_data = temp_data.merge(temp_cluster, on='Group',how='left')
         final_change = final_change.append(temp,ignore_index=True)

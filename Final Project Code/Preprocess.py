@@ -90,8 +90,8 @@ def get_the_daily_abs_spread_windows(bonds_list):
         try:
             bond['G_change_Percent']=bond.GSpread.pct_change()
             bond['G_change'] = bond.GSpread.diff()
-            bond['ModifiedDuration_Plain_change']=bond.ModifiedDuration_Plain.pct_change()
-            bond['YieldWorst_change']=bond.YieldWorst.pct_change()
+            bond['ModifiedDuration_Plain_change']=bond.ModifiedDuration_Plain.diff()
+            bond['YieldWorst_change']=bond.YieldWorst.diff()
             bond.dropna(subset=['G_change'],inplace = True)
             bond_spread_list.append((len(bond.GSpread.values),bond.SecurityID.iloc[0],bond))
         except:
@@ -114,8 +114,8 @@ def get_the_abs_weekly_spread_windows(bonds_list):
             d = bond.resample('W', loffset=offset).apply(logic)
             d['G_change_Percent']=d.GSpread.pct_change()
             d['G_change'] = d.GSpread.diff()
-            d['ModifiedDuration_Plain_change']=d.ModifiedDuration_Plain.pct_change()
-            d['YieldWorst_change']=d.YieldWorst.pct_change()
+            d['ModifiedDuration_Plain_change']=d.ModifiedDuration_Plain.diff()
+            d['YieldWorst_change']=d.YieldWorst.diff()
             d.dropna(subset=['G_change_Percent'],inplace = True)
             d.reset_index(inplace=True)
             bond_spread_list.append((len(d.GSpread.values),bond.SecurityID.iloc[0],d))
@@ -212,10 +212,10 @@ def get_the_cluster_data(security_info, cluster_data, windows):
     Group_type_term_per = Group_Type_term / Group
     Group_rating_per = Group_Rating / Group
 
-    Group_Sector_indicator = (Group_sector_per - Sector_per) / (1 - Sector_per)
-    Group_Seniority_indicator = (Group_Seniority_per - Seniority_per) / (1 - Seniority_per)
-    Group_type_term_indicator = (Group_type_term_per - Type_of_Term_per) / (1 - Type_of_Term_per)
-    Group_rating_indicator = (Group_rating_per - Rating_per) / (1 - Rating_per)
+    Group_Sector_indicator = (Group_sector_per - Sector_per)
+    Group_Seniority_indicator = (Group_Seniority_per - Seniority_per)
+    Group_type_term_indicator = (Group_type_term_per - Type_of_Term_per)
+    Group_rating_indicator = (Group_rating_per - Rating_per)
 
     for i in range(0, 125):
         if i == 0:
